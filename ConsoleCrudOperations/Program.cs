@@ -69,9 +69,10 @@ namespace ConsoleCrudOperations
             Console.Write("\r\nLast Name: ");
             var lastName = Console.ReadLine();
 
-            var person = new Person 
-            { 
-                FirstName = firstName, LastName = lastName 
+            var person = new Person
+            {
+                FirstName = firstName,
+                LastName = lastName
             };
 
             var success = _personService.Add(person);
@@ -101,7 +102,7 @@ namespace ConsoleCrudOperations
 
             foreach (var person in personList)
             {
-                Console.WriteLine($"{counter}.) ID: {person.Id, -3} FirstName: {person.FirstName, -10} LastName: {person.LastName, -10}");
+                Console.WriteLine($"{counter}.) ID: {person.Id,-3} FirstName: {person.FirstName,-10} LastName: {person.LastName,-10}");
                 counter++;
             }
 
@@ -190,7 +191,7 @@ namespace ConsoleCrudOperations
             Console.Write("\r\nPlease enter the ID: ");
 
             var id = Convert.ToInt32(Console.ReadLine());
-            var person = _personService.Find(id);         
+            var person = _personService.Find(id);
 
             if (person != null)
             {
